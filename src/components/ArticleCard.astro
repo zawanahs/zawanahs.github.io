@@ -1,0 +1,35 @@
+---
+import type { Article } from '../lib/content';
+import { articleHref, categoryLabels, formatDate, seriesLabel } from '../lib/content';
+import CoverVisual from './CoverVisual.astro';
+
+interface Props {
+  article: Article;
+  size?: 'standard' | 'compact';
+  placeholderVisual?: boolean;
+  hideCategory?: boolean;
+}
+
+const { article, size = 'standard', placeholderVisual = false, hideCategory = false } = Astro.props;
+const series = seriesLabel(article.data.series);
+const metaLabel = series ?? (hideCategory ? undefined : categoryLabels[article.data.category]);
+---
+
+<article class:list={['article-card', `card-${size}`]}>
+  <a class="card-visual-link" href={articleHref(article)} aria-label={`Read ${article.data.title}`}>
+    {placeholderVisual ? (
+      <div class:list={['image-placeholder', { compact: size === 'compact' }]} aria-hidden="true"></div>
+    ) : article.data.cover ? (
+      <img src={article.data.cover.src} alt={article.data.coverAlt ?? ''} loading="lazy" />
+    ) : (
+      <CoverVisual visual={article.data.visual} compact />
+    )}
+  </a>
+  <div class:list={['article-meta', { 'meta-date-only': !metaLabel }]}>
+    {metaLabel && <span>{metaLabel}</span>}
+    <time datetime={article.data.published.toISOString()}>{formatDate(article.data.published)}</time>
+  </div>
+  <h2><a href={articleHref(article)}>{article.data.title}</a></h2>
+  <p>{article.data.description}</p>
+  <a class="text-link" href={articleHref(article)}>Read article ↗</a>
+</article>

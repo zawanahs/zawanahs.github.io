@@ -1,0 +1,35 @@
+---
+interface Props {
+  visual?: 'agent-flow' | 'empathy' | 'analysis' | 'hub' | 'town' | 'travel' | 'none';
+  compact?: boolean;
+}
+
+const { visual = 'none', compact = false } = Astro.props;
+---
+
+<div class:list={['cover-visual', `visual-${visual}`, { compact }]} aria-hidden="true">
+  {visual === 'agent-flow' && (
+    <>
+      <div class="message-fragment"><small>YOU</small><span>Art Science Museum with Michelle, the entire afternoon.</span></div>
+      <strong class="typing-word">typing...</strong>
+      <div class="result-fragment"><small>PERSONAL ASSISTANT</small><strong>Event added</strong><span>No conflicts found</span></div>
+      <div class="flow-line"><span>message</span><i>→</i><span>agent</span><i>→</i><span>calendar</span></div>
+    </>
+  )}
+  {visual === 'empathy' && (
+    <><i class="overlap-circle one"></i><i class="overlap-circle two"></i><strong class="visual-words">RADICAL<br />EMPATHY</strong></>
+  )}
+  {visual === 'analysis' && (
+    <div class="versus"><strong>MY<br />ANALYSIS</strong><i>VS</i><strong>CLAUDE<br />SONNET</strong></div>
+  )}
+  {visual === 'hub' && (
+    <div class="hub-map"><strong></strong><i class="one"></i><i class="two"></i><i class="three"></i><i class="four"></i></div>
+  )}
+  {visual === 'town' && (
+    <div class="town-map"><i class="road one"></i><i class="road two"></i><b class="plot one"></b><b class="plot two"></b><b class="plot three"></b></div>
+  )}
+  {visual === 'travel' && (
+    <div class="travel-map"><strong>SG</strong><i>→</i><span>✦</span><i>→</i><strong>AUG</strong></div>
+  )}
+  {visual === 'none' && <span class="visual-monogram">Z—</span>}
+</div>

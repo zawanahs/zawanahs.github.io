@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://zawanahs.github.io/sitemap-index.xml

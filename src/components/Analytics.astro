@@ -1,0 +1,6 @@
+---
+const scriptUrl = import.meta.env.PUBLIC_ANALYTICS_SCRIPT_URL;
+const websiteId = import.meta.env.PUBLIC_ANALYTICS_WEBSITE_ID;
+---
+
+{scriptUrl && websiteId && <script is:inline defer src={scriptUrl} data-website-id={websiteId}></script>}

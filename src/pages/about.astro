@@ -1,0 +1,44 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE } from '../lib/site';
+import { siBluesky, siGithub, siGmail, siX } from 'simple-icons';
+---
+
+<BaseLayout title="About" description="Zawanah is an AI Solutions Designer who combines workflow building, analytical depth, and stakeholder judgement.">
+  <section class="page-shell about-grid">
+    <p class="eyebrow about-heading">About me</p>
+    <div class="about-portrait">
+      <img src="/images/zawanah-professional-headshot.webp" alt="Portrait of Zawanah" width="900" height="900" />
+    </div>
+    <div class="about-copy">
+      <p class="about-lede">I have experience across several domains: audit, analytics, and regional business partnering across 5 markets in EMEA and APAC. I currently work on building agentic workflows and systems, and write about it here. I enjoy the autonomy of exploring new tools and ways of working.</p>
+      <figure class="about-quote">
+        <blockquote>
+          <p lang="la">“Per aspera ad astra.”</p>
+        </blockquote>
+        <figcaption>Through hardships to the stars</figcaption>
+      </figure>
+      <div class="about-reflection">
+        <p>I value different perspectives, so I make time for podcasts and science fiction that leave me thinking about how we could build a better future. The quote is a reminder to work hard towards a post-scarcity future, hopefully in my lifetime.🤔💭</p>
+      </div>
+      <p>I relax with matcha, coffee or tea, board games, cycling and running. I am also a part-time Mayor of Fontebrac and Belvau in <em>Town to City</em>.</p>
+      <nav class="about-socials" aria-label="Social links">
+        <a class="social-icon-link social-icon-linkedin" href={SITE.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn">
+          <span aria-hidden="true">in</span>
+        </a>
+        <span class="social-icon-link is-placeholder" role="img" aria-label="X profile coming soon" title="X, coming soon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d={siX.path}></path></svg>
+        </span>
+        <a class="social-icon-link" href={SITE.github} target="_blank" rel="noreferrer" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d={siGithub.path}></path></svg>
+        </a>
+        <span class="social-icon-link is-placeholder" role="img" aria-label="Bluesky profile coming soon" title="Bluesky, coming soon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d={siBluesky.path}></path></svg>
+        </span>
+        <span class="social-icon-link is-placeholder" role="img" aria-label="Gmail address coming soon" title="Gmail, coming soon">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d={siGmail.path}></path></svg>
+        </span>
+      </nav>
+    </div>
+  </section>
+</BaseLayout>

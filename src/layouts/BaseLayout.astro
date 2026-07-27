@@ -1,0 +1,59 @@
+---
+import '../styles/global.css';
+import Analytics from '../components/Analytics.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE } from '../lib/site';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  type?: 'website' | 'article';
+}
+
+const {
+  title = SITE.title,
+  description = SITE.description,
+  image,
+  type = 'website',
+} = Astro.props;
+const canonical = new URL(Astro.url.pathname, SITE.url);
+const fullTitle = title === SITE.title ? title : `${title} — Zawanah`;
+---
+
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/png" href="/images/z-monogram.png?v=2" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" type="application/rss+xml" title="Zawanah" href="/rss.xml" />
+    <title>{fullTitle}</title>
+    <meta property="og:type" content={type} />
+    <meta property="og:site_name" content="Zawanah" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    {image && <meta property="og:image" content={new URL(image, SITE.url)} />}
+    <meta name="twitter:card" content={image ? 'summary_large_image' : 'summary'} />
+    <script is:inline>
+      (() => {
+        const stored = localStorage.getItem('zawanah-theme');
+        const dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.dataset.theme = stored || (dark ? 'dark' : 'light');
+      })();
+    </script>
+    <Analytics />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <Header />
+    <main id="main-content"><slot /></main>
+    <Footer />
+  </body>
+</html>

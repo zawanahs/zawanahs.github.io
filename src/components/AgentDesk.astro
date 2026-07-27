@@ -1,0 +1,43 @@
+---
+import type { Article } from '../lib/content';
+import { articleHref, categoryLabels, formatDate, seriesLabel } from '../lib/content';
+import CoverVisual from './CoverVisual.astro';
+
+interface Props {
+  articles: Article[];
+}
+
+const { articles } = Astro.props;
+---
+
+<section class="agent-desk" aria-labelledby="agent-desk-title">
+  <header class="agent-desk-heading">
+    <span>Latest</span>
+    <h2 id="agent-desk-title">The Agent Desk</h2>
+    <p>The newest notes about the agents I build, use, and take apart to understand what is happening underneath.</p>
+  </header>
+  <div class="agent-article-grid">
+    {articles.map((article, index) => (
+      <article class="agent-article-card">
+        <span class="agent-article-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+        <a class="agent-article-thumbnail" href={articleHref(article)} aria-label={`Read ${article.data.title}`}>
+          {article.data.cover ? (
+            <img src={article.data.cover.src} alt={article.data.coverAlt ?? ''} loading="lazy" />
+          ) : (
+            <CoverVisual visual={article.data.visual} compact />
+          )}
+        </a>
+        <div class="agent-article-title">
+          <span>{seriesLabel(article.data.series) ?? categoryLabels[article.data.category]}</span>
+          <h3><a href={articleHref(article)}>{article.data.title}</a></h3>
+        </div>
+        <p>{article.data.description}</p>
+        <div class="agent-article-action">
+          <time datetime={article.data.published.toISOString()}>{formatDate(article.data.published)}</time>
+          <a href={articleHref(article)} aria-label={`Read ${article.data.title}`}>↗</a>
+        </div>
+      </article>
+    ))}
+  </div>
+  <a class="all-agent-stories" href="/tags/agents/">Browse all agent articles →</a>
+</section>

@@ -1,0 +1,30 @@
+---
+import type { GetStaticPaths } from 'astro';
+import ArticleCard from '../components/ArticleCard.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { categories } from '../content.config';
+import { categoryLabels, getPublishedArticles } from '../lib/content';
+
+const introductions = {
+  ideas: 'Perspectives on leadership, work, technology, and the human decisions across all three.',
+  builds: 'Agents, workflows, and experiments.',
+  notes: 'Concepts I am learning and I dive deep on some.',
+  'after-hours': 'Town planning, side quests, and the things that keep a life interesting beyond the workbench.',
+};
+
+export const getStaticPaths = (() => categories.map((category) => ({ params: { category } }))) satisfies GetStaticPaths;
+
+const category = Astro.params.category as keyof typeof categoryLabels;
+const articles = (await getPublishedArticles()).filter((article) => article.data.category === category);
+const label = categoryLabels[category];
+---
+
+<BaseLayout title={label} description={introductions[category]}>
+  <section class="page-shell">
+    <header class="page-heading category-heading">
+      <div><h1>{label}</h1></div>
+      <p>{introductions[category]}</p>
+    </header>
+    {articles.length ? <div class="article-grid">{articles.map((article) => <ArticleCard article={article} hideCategory />)}</div> : <p class="empty-state">The first story is being prepared.</p>}
+  </section>
+</BaseLayout>

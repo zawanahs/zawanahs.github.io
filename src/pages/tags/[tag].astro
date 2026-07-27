@@ -1,0 +1,28 @@
+---
+import type { GetStaticPaths } from 'astro';
+import ArticleCard from '../../components/ArticleCard.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getPublishedArticles } from '../../lib/content';
+
+export const getStaticPaths = (async () => {
+  const articles = await getPublishedArticles();
+  const tags = [...new Set(articles.flatMap((article) => article.data.tags.map((tag) => tag.toLowerCase())))];
+  return tags.map((tag) => ({
+    params: { tag },
+    props: { tag, articles: articles.filter((article) => article.data.tags.some((item) => item.toLowerCase() === tag)) },
+  }));
+}) satisfies GetStaticPaths;
+
+const { tag, articles } = Astro.props;
+const label = tag.replace(/-/g, ' ');
+---
+
+<BaseLayout title={`Articles tagged ${label}`} description={`Zawanah’s articles tagged ${label}.`}>
+  <section class="page-shell">
+    <header class="page-heading">
+      <div><p class="archive-label">Tag · {String(articles.length).padStart(2, '0')}</p><h1>{label}</h1></div>
+      <p>Articles connected by a shared subject, across categories and series.</p>
+    </header>
+    <div class="article-grid">{articles.map((article) => <ArticleCard article={article} />)}</div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,67 @@
+---
+import type { GetStaticPaths } from 'astro';
+import { render } from 'astro:content';
+import ArticleCard from '../../components/ArticleCard.astro';
+import CoverVisual from '../../components/CoverVisual.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { articleSlug, categoryLabels, formatDate, getPublishedArticles, seriesLabel, tagHref } from '../../lib/content';
+
+export const getStaticPaths = (async () => {
+  const articles = await getPublishedArticles();
+  return articles.map((article) => ({
+    params: { slug: articleSlug(article) },
+    props: { article, articles },
+  }));
+}) satisfies GetStaticPaths;
+
+const { article, articles } = Astro.props;
+const { Content } = await render(article);
+const related = articles.filter((item) => item.id !== article.id && (item.data.category === article.data.category || (article.data.series && item.data.series === article.data.series))).slice(0, 3);
+const label = seriesLabel(article.data.series) ?? categoryLabels[article.data.category];
+---
+
+<BaseLayout title={article.data.title} description={article.data.description} type="article" image={article.data.cover?.src}>
+  <article>
+    <header class="article-header">
+      <p class="eyebrow">{label}</p>
+      <h1>{article.data.title}</h1>
+      <p class="article-deck">{article.data.description}</p>
+      <div class="article-byline"><span class="avatar" aria-hidden="true">Z</span><span><strong>Zawanah</strong><time datetime={article.data.published.toISOString()}>{formatDate(article.data.published)}</time></span></div>
+    </header>
+    <div class="article-hero">
+      {article.data.cover ? <img src={article.data.cover.src} alt={article.data.coverAlt ?? ''} /> : <CoverVisual visual={article.data.visual} />}
+    </div>
+    <div class="article-body" data-article={articleSlug(article)}><Content /></div>
+    <footer class="article-footer">
+      <p>Filed under <a href={`/${article.data.category}/`}>{categoryLabels[article.data.category]}</a>{article.data.series && <> · <a href={`/series/${article.data.series}/`}>{seriesLabel(article.data.series)}</a></>}.</p>
+      {article.data.tags.length > 0 && <div class="article-tags" aria-label="Article tags">{article.data.tags.map((tag) => <a href={tagHref(tag)}>#{tag}</a>)}</div>}
+    </footer>
+  </article>
+  {related.length > 0 && <section class="related-section"><p class="eyebrow">Keep reading</p><h2>Related stories</h2><div class="article-grid">{related.map((item) => <ArticleCard article={item} />)}</div></section>}
+</BaseLayout>
+
+<script>
+  const autoplayVideos = document.querySelectorAll<HTMLVideoElement>('.article-body video[data-autoplay]');
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (!prefersReducedMotion && 'IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          const video = entry.target as HTMLVideoElement;
+
+          if (entry.isIntersecting) {
+            void video.play().catch(() => {
+              // Playback controls remain available if the browser blocks autoplay.
+            });
+          } else {
+            video.pause();
+          }
+        }
+      },
+      { threshold: 0.5 },
+    );
+
+    autoplayVideos.forEach((video) => observer.observe(video));
+  }
+</script>

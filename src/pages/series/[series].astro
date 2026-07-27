@@ -1,0 +1,30 @@
+---
+import type { GetStaticPaths } from 'astro';
+import ArticleCard from '../../components/ArticleCard.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getPublishedArticles, seriesLabel } from '../../lib/content';
+
+export const getStaticPaths = (async () => {
+  const articles = await getPublishedArticles();
+  const series = [...new Set(articles.map((article) => article.data.series).filter(Boolean))];
+  return series.map((name) => ({
+    params: { series: name },
+    props: {
+      name,
+      articles: articles
+        .filter((article) => article.data.series === name)
+        .sort((a, b) => (a.data.seriesOrder ?? 999) - (b.data.seriesOrder ?? 999) || a.data.published.valueOf() - b.data.published.valueOf()),
+    },
+  }));
+}) satisfies GetStaticPaths;
+
+const { name, articles } = Astro.props;
+const label = seriesLabel(name);
+---
+
+<BaseLayout title={label} description={`Every article in Zawanah’s ${label} series.`}>
+  <section class="page-shell">
+    <header class="page-heading series-heading"><div><p class="archive-label">Named series · {String(articles.length).padStart(2, '0')}</p><h1>{label}</h1></div><p>A connected set of notes that follows the work beyond a single build.</p></header>
+    <div class="article-grid">{articles.map((article) => <ArticleCard article={article} />)}</div>
+  </section>
+</BaseLayout>

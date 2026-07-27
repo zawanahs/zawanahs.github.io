@@ -1,0 +1,49 @@
+---
+import AgentDesk from '../components/AgentDesk.astro';
+import ArticleCard from '../components/ArticleCard.astro';
+import CoverVisual from '../components/CoverVisual.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { articleHref, formatDate, getPublishedArticles } from '../lib/content';
+import { getPopularArticles } from '../lib/popular';
+
+const articles = await getPublishedArticles();
+const popularArticles = getPopularArticles(articles, 3);
+const agentArticles = articles.filter((article) => article.data.tags.some((tag) => tag.toLowerCase() === 'agents')).slice(0, 3);
+const afterHours = articles.find((article) => article.data.category === 'after-hours');
+---
+
+<BaseLayout>
+  <section class="home-intro">
+    <div class="home-intro-grid">
+      <p class="intro-greeting">Hi there, I’m Zawanah <span aria-hidden="true">👋🏽</span></p>
+      <h1>Welcome to my corner<br />{' '}of the internet!</h1>
+      <div class="home-intro-copy">
+        <p>I design workflows, build intelligent systems, ponder about life, and write about them here. After hours, I am a Mayor at Fontebrac building my town to city.</p>
+        <a class="text-link" href="/about/">A little more context →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="selected-writing page-shell" aria-labelledby="popular-articles-heading">
+    <img class="ledge-character" src="/images/zawanah-counter.png" alt="" aria-hidden="true" />
+    <h2 class="popular-label" id="popular-articles-heading">Popular</h2>
+    <div class="selected-writing-grid">
+      {popularArticles.map((article) => <ArticleCard article={article} />)}
+    </div>
+  </section>
+
+  <AgentDesk articles={agentArticles} />
+
+  {afterHours && (
+    <section class="after-hours-feature">
+      <div class="after-hours-visual"><CoverVisual visual={afterHours.data.visual} /></div>
+      <div class="after-hours-copy">
+        <p class="eyebrow">After Hours</p>
+        <h2><a href={articleHref(afterHours)}>{afterHours.data.title}</a></h2>
+        <p>{afterHours.data.description}</p>
+        <span>{formatDate(afterHours.data.published)}</span>
+        <a class="text-link" href="/after-hours/">More from life beyond the workbench →</a>
+      </div>
+    </section>
+  )}
+</BaseLayout>
