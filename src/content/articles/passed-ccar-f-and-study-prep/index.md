@@ -12,7 +12,7 @@ coverAlt: "Layered paper collage of colorful mock exam scorecards and progress g
 visual: agent-flow
 ---
 
-Over the past few months, I have been building agents with NanoClaw and, more recently, Hermes. I was driven by my own use-cases and curiosity for how these open-source agent harnesses work.
+Over the past few months, I have been building agents with [NanoClaw](https://zawanah.com/series/nanoclaw/) and, more recently, [Hermes](https://zawanah.com/series/hermes/). I was driven by my own use-cases and curiosity for how these open-source agent harnesses work.
 
 Although I had been directing my own experiments, I wanted a more structured understanding of the architectural decisions behind agentic systems, and I wanted to use Claude Code more deliberately in my day-to-day work, rather than discovering its features as and when I need or read about them.
 
