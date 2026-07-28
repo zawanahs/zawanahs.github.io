@@ -120,7 +120,7 @@ A few hours later, Anthropic sent an email inviting me to claim the [CCAR-F badg
   src="https://cdn.credly.com/assets/utilities/embed.js">
 </script>
 
-It was a rewarding journey, and I finished it feeling even more motivated than when I started. Perhaps I’ll carry that momentum into CCAO-F next. ;)
+It was a rewarding journey, and I finished it feeling even more motivated than when I started. Perhaps I’ll carry that momentum into the next. ;)
 
 
 
