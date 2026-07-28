@@ -5,6 +5,7 @@ published: 2026-07-27
 category: ideas
 tags: [leadership, stakeholder-management, negotiation, empathy, star-trek]
 featured: false
+series: star-trek
 cover: ./cover-cut-paper.png
 coverAlt: "Layered paper handshake between a green-sleeved human hand and a striped R’ongovian hand."
 ---
