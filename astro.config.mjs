@@ -7,7 +7,7 @@ import remarkFigureCaptions from './src/lib/remarkFigureCaptions.mjs';
 import remarkTypography from './src/lib/remarkTypography.mjs';
 
 export default defineConfig({
-  site: 'https://zawanahs.github.io',
+  site: 'https://zawanah.com',
   output: 'static',
   integrations: [mdx(), sitemap()],
   markdown: {

@@ -19,7 +19,15 @@ const related = articles.filter((item) => item.id !== article.id && (item.data.c
 const label = seriesLabel(article.data.series) ?? categoryLabels[article.data.category];
 ---
 
-<BaseLayout title={article.data.title} description={article.data.description} type="article" image={article.data.cover?.src}>
+<BaseLayout
+  title={article.data.title}
+  description={article.data.description}
+  type="article"
+  image={article.data.cover?.src}
+  imageAlt={article.data.coverAlt}
+  imageWidth={article.data.cover?.width}
+  imageHeight={article.data.cover?.height}
+>
   <article>
     <header class="article-header">
       <p class="eyebrow">{label}</p>

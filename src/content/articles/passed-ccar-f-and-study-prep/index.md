@@ -7,8 +7,8 @@ series: ccar-f
 tags: [agents, claude]
 featured: true
 featureOrder: 1
-cover: ./cover-cut-paper.png
-coverAlt: "Layered paper collage of colorful mock exam scorecards and progress gates showing repeated preparation."
+cover: ./cover-credential.png
+coverAlt: "Orange Claude Certified Architect Foundations credential badge centred on a warm paper background."
 visual: agent-flow
 ---
 
