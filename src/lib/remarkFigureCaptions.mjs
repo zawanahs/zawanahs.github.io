@@ -26,8 +26,8 @@ function transformChildren(node) {
       child.children = [
         image,
         {
-          type: 'emphasis',
-          children: [{ type: 'text', value: caption }],
+          type: 'paragraph',
+          children: parseCaption(caption),
           data: {
             hName: 'figcaption',
             hProperties: { className: ['article-caption'] },
@@ -38,4 +38,38 @@ function transformChildren(node) {
 
     transformChildren(child);
   }
+}
+
+function parseCaption(value) {
+  const children = [];
+  const inlinePattern = /\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)|\*([^*]+)\*/g;
+  let cursor = 0;
+  let match;
+
+  while ((match = inlinePattern.exec(value)) !== null) {
+    if (match.index > cursor) {
+      children.push({ type: 'text', value: value.slice(cursor, match.index) });
+    }
+
+    if (match[1] && match[2]) {
+      children.push({
+        type: 'link',
+        url: match[2],
+        children: [{ type: 'text', value: match[1] }],
+      });
+    } else {
+      children.push({
+        type: 'emphasis',
+        children: [{ type: 'text', value: match[3] }],
+      });
+    }
+
+    cursor = inlinePattern.lastIndex;
+  }
+
+  if (cursor < value.length) {
+    children.push({ type: 'text', value: value.slice(cursor) });
+  }
+
+  return children;
 }

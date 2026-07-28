@@ -60,7 +60,7 @@ That is **radical empathy**. The R’ongovians were not merely copying their cou
 
 When the R’ongovia delegation leaves, they raised the Federation flag, signalling that they have chosen the alliance!
 
-![captain-pike-rongovian](./captain-pike-rongovian.jpg "Still from *Star Trek: Strange New Worlds*, “Spock Amok” (S1E5). © CBS Studios Inc./Paramount. Image via [TrekCore](https://blog.trekcore.com/2022/06/star-trek-strange-new-worlds-review-spock-amok/).")
+![captain-pike-rongovian](./captain-pike-rongovian.jpg "Still from *Star Trek: Strange New Worlds*, “Spock Amok” (S1E5). © CBS Studios Inc./Paramount. Image sourced via [TrekCore](https://blog.trekcore.com/2022/06/star-trek-strange-new-worlds-review-spock-amok/).")
 
 Let's unpack why:
 
