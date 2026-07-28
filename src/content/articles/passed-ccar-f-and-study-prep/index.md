@@ -107,7 +107,7 @@ A few hours later, Anthropic sent an email inviting me to claim the [CCAR-F badg
 
 <div style="display: flex; justify-content: center; margin: 2rem 0;">
   <div
-    data-iframe-width="150"
+    data-iframe-width="320"
     data-iframe-height="270"
     data-share-badge-id="0a3057b8-2c86-4dc7-a78b-b0007b95c0d4"
     data-share-badge-host="https://www.credly.com">
