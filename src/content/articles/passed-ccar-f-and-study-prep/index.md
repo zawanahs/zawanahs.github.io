@@ -105,6 +105,21 @@ My score report was then printed and stamped for me, and I was free to leave aft
 
 A few hours later, Anthropic sent an email inviting me to claim the [CCAR-F badge](https://www.credly.com/badges/0a3057b8-2c86-4dc7-a78b-b0007b95c0d4/public_url). :)   
 
+<div style="display: flex; justify-content: center; margin: 2rem 0;">
+  <div
+    data-iframe-width="150"
+    data-iframe-height="270"
+    data-share-badge-id="0a3057b8-2c86-4dc7-a78b-b0007b95c0d4"
+    data-share-badge-host="https://www.credly.com">
+  </div>
+</div>
+
+<script
+  type="text/javascript"
+  async
+  src="https://cdn.credly.com/assets/utilities/embed.js">
+</script>
+
 It was a rewarding journey, and I finished it feeling even more motivated than when I started. Perhaps I’ll carry that momentum into CCAO-F next. ;)
 
 
