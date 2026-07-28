@@ -128,9 +128,9 @@ With strict boundaries, this makes the architecture *ideal* to build specialised
 
 While I may not be comfortable (yet) to have an all-in-one assistant that has root access to my PC, I have some important use cases to build specialised agents for:
 
-1. Personal Scheduler - there's simply too many clicks to set up a Gogole calendar event, compared to typing in a single sentence to my agent
-2. Diarist for Journaling - writing my thoughts in a book is not as easy as typing in a chat on the go
-3. Executive Coach - for big career-related decisions that require greater consideration and alternative points of view before committing
-4. Home Manager - keeps us on schedule for home management eg. aircon servicing, home improvements and DIYs, managing grocery inventories and more.
+1. [Personal Scheduler](https://zawanah.com/articles/personal-scheduler-nanoclaw/) - there's simply too many clicks to set up a Gogole calendar event, compared to typing in a single sentence to my agent
+2. [Journaling](https://zawanah.com/articles/dear-diary-speak-to-me/) - writing my thoughts in a book is not as easy as typing in a chat on the go
+3. [Career Navigator](https://zawanah.com/articles/career-navigator/) - for big career-related decisions that require greater consideration and alternative points of view before committing
+4. [Home Manager](https://zawanah.com/articles/home-manager/) - keeps us on schedule for home management eg. aircon servicing, home improvements and DIYs, managing grocery inventories and more.
 
 I share details of each agent in their respective pages, including what I built it for, what tools I grant them access to, and how it has been working for me thus far. 
