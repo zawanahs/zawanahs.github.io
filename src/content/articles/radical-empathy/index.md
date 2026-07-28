@@ -1,5 +1,5 @@
 ---
-title: "You Shouldn't Join the Federation: Radical Empathy"
+title: "You Shouldn't Ally with Us: Radical Empathy in Difficult Conversations"
 description: "Captain Pike won over the R'ongovians by making their argument for them."
 published: 2026-07-27
 category: ideas
@@ -10,7 +10,7 @@ cover: ./cover-cut-paper.png
 coverAlt: "Layered paper handshake between a green-sleeved human hand and a striped R’ongovian hand."
 ---
 
-There's an episode about radical empathy, exhibited by Captain Pike that stuck with me. I remember thinking no way could he convince the R'ongovian to be an ally to the Federation after what was shown, but Captain Pike did it. So I have to unpack and dissect this scene. 
+This episode from *Star Trek: Strange New Worlds* was memorable. In this episode, Captain Pike is tasked with persuading the R'ongovians to ally with the Federation, but every diplomatic approach seems to fail. Mid-way, I was certain that there was *no way* he could win them over. But he eventually did, using an unconventional method: radical empathy and telling them that they shouldn't ally with the Federation. 
 
 ## Strategic Territory 
 
@@ -22,27 +22,31 @@ So the Federation is eager to secure the R'ongovians' support, and have tasked C
 
 ## The Beginnings of Negotiation
 
-So Pike gave a textbook pitch when presenting the Federation; that it is democratic, its members have a voice, and its strength come from cooperation. 
+Pike started with a textbook pitch when presenting the Federation; that it is democratic, its members have a voice, and its strength come from cooperation. 
 
 When that did not work, Pike was told that **empathy is a defining quality of the R'ongovian people**. And that their behaviour is also *inconsistent*, depending on who they speak with. 
 
 They mirror the characteristics or personalities of the person they are speaking with. For example, being formal and analytical when speaking with Spock (a Vulcan ie. highly logical)
 
-> When I watched the scenes of the R'ongovians engaging in a discussion with various Federation individuals (adopting different diplomatic approaches), it was frustrating because it appeared as if the R'ongovians were mocking whoever they are speaking with and not actively trying to reach an understanding to move the discussion forward. 
+> When I watched the scenes of the R'ongovians engaging in a discussion with various Federation individuals (adopting different diplomatic approaches), it was quite frustrating because it appeared as if the R'ongovians were mocking whoever they are speaking with and not actively trying to reach an understanding to move the discussion forward. 
 
 ## Why R’ongovians mirror their counterpart
 
 However, Pike realised that it was **diagnostic**. R'ongovians do that to enter the other party's mode of thinking to *discover whether that party can reciprocate (and enter their own)*.
 
-A particularly strong argument the R'ongovians made was in the discussion with Spock. Spock approached from a deterrence angle by warning them about Klingon cultural domination, but the R'ongovians turned it back on the Federation. If the concern is cultural survival and the Federation alliance promises cooperation, cooperation can also produce homogenization and what would happen to the small R'ongovian culture inside a powerful system? Will R'ongovians retain its identity or will it slowly become another Federation-shaped society? 
+A particularly strong argument the R'ongovians made was in the discussion with Spock. Spock approached from a deterrence angle by warning them about Klingon cultural domination, but the R'ongovians turned it back on the Federation. 
+
+If the concern is cultural survival and the Federation alliance promises cooperation, cooperation can also produce homogenization and what would happen to the small R'ongovian culture inside a powerful system? Will R'ongovians retain its identity or will it slowly become another Federation-shaped society? 
 
 Spock acknowledges the difficulty of living away from Vulcan and the cultural sacrifices required by Starfleet.
 
-While Pike was instructed to remain an observer, but he interrupted to defend Spock, describing Spock's service as a genuine sacrifice and honours his effort to understand cultures different from his own. The R'ongovians *responded positively* to Pike (although he violated their instructions for him to remain an observer) because they are impressed by his willingness to defend another person's perspective than by being a Federation boy scout. So they offered him a final opportunity to make Federation's case for an alliance. 
+While Pike was instructed to remain an observer, he interrupted to defend Spock, describing Spock's service as a genuine sacrifice and honours his effort to understand cultures different from his own. 
+
+Although he violated their intructions for him to remain an observer, the R'ongovians *responded positively* to Pike because they are impressed by his willingness to defend another person's perspective than by being a Federation boy scout. So they offered him a final opportunity to make Federation's case for an alliance. 
 
 ## Radical Empathy
 
-Pike said **"Easy. You shouldn't."** and he proceeded to make the strongest argument against Federation's objectives :
+Pike said **"Easy. You shouldn't."** and he proceeded to make the strongest argument *against* the Federation's objectives :
 
 1. An alliance would make the Federation’s enemies R’ongovia’s enemies. The Federation is only recently out of a Klingon war, the Romulans remain a threat, and *new conflicts will inevitably emerge*. 
 2. Admitting that the Federation has not approached R’ongovia out of deep appreciation for its culture. It *barely* understands that culture. Its immediate interest is R’ongovian territory. 
@@ -50,13 +54,13 @@ Pike said **"Easy. You shouldn't."** and he proceeded to make the strongest argu
 
 The Federation has much to offer *but its benefits carry a price* and R’ongovia has legitimate reasons to conclude that this price is too high.
 
-That is **radical empathy**. The R’ongovians were not merely copying their counterparts but rather, were testing whether another society could see the world from a R’ongovian position.
+That is **radical empathy**. The R’ongovians were not merely copying their counterparts but rather, were testing whether another society could see the world from a R’ongovian position, and Pike demonstrated that.
 
 ## The Negotiations were a test of Character, and Pike passed it
 
-When the R’ongovia delegation leaves, they raised the Federation flag, signalling that they have chosen the alliance.
+When the R’ongovia delegation leaves, they raised the Federation flag, signalling that they have chosen the alliance!
 
-![captain-pike-rongovian](./captain-pike-rongovian.jpg "[Source](https://blog.trekcore.com/2022/06/star-trek-strange-new-worlds-review-spock-amok/)")
+![captain-pike-rongovian](./captain-pike-rongovian.jpg "Still from *Star Trek: Strange New Worlds*, “Spock Amok” (S1E5). © CBS Studios Inc./Paramount. Image via [TrekCore](https://blog.trekcore.com/2022/06/star-trek-strange-new-worlds-review-spock-amok/).")
 
 Let's unpack why:
 
