@@ -1,5 +1,5 @@
 ---
-title: "I scored 922 on the Claude Certified Architect Foundations Exam"
+title: "Scored 922 on the Claude Certified Architect Foundations Exam"
 description: "My study system combined structured learning, mock exams, and Claude as a tutor"
 published: 2026-07-20
 category: notes
