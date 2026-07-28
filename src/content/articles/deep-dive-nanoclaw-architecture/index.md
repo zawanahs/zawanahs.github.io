@@ -6,7 +6,7 @@ category: builds
 series: nanoclaw
 tags: [agents, nanoclaw, architecture]
 featured: true
-featureOrder: 1
+featureOrder: 2
 cover: ./cover-cut-paper.png
 coverAlt: "Layered paper cutaway of messaging channels, routing, transport, isolated agents, and external services."
 visual: agent-flow
@@ -134,4 +134,3 @@ While I may not be comfortable (yet) to have an all-in-one assistant that has ro
 4. Home Manager - keeps us on schedule for home management eg. aircon servicing, home improvements and DIYs, managing grocery inventories and more.
 
 I share details of each agent in their respective pages, including what I built it for, what tools I grant them access to, and how it has been working for me thus far. 
-

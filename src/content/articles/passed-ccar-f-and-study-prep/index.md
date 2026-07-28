@@ -5,6 +5,8 @@ published: 2026-07-20
 category: notes
 series: ccar-f
 tags: [agents, claude]
+featured: true
+featureOrder: 1
 cover: ./cover-cut-paper.png
 coverAlt: "Layered paper collage of colorful mock exam scorecards and progress gates showing repeated preparation."
 visual: agent-flow
@@ -101,7 +103,7 @@ There is a summary of percentage of questions I got right against the various te
 
 My score report was then printed and stamped for me, and I was free to leave after. The score report will also be sent via email. 
 
-A few hours later, Anthropic sent an email inviting me to claim the CCAR-F badge. :)   
+A few hours later, Anthropic sent an email inviting me to claim the [CCAR-F badge](https://www.credly.com/badges/0a3057b8-2c86-4dc7-a78b-b0007b95c0d4/public_url). :)   
 
 It was a rewarding journey, and I finished it feeling even more motivated than when I started. Perhaps I’ll carry that momentum into CCAO-F next. ;)
 
