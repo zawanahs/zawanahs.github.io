@@ -1,7 +1,6 @@
 ---
 import AgentDesk from '../components/AgentDesk.astro';
 import ArticleCard from '../components/ArticleCard.astro';
-import CoverVisual from '../components/CoverVisual.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { articleHref, formatDate, getPublishedArticles } from '../lib/content';
 import { getPopularArticles } from '../lib/popular';
@@ -36,7 +35,6 @@ const afterHours = articles.find((article) => article.data.category === 'after-h
 
   {afterHours && (
     <section class="after-hours-feature">
-      <div class="after-hours-visual"><CoverVisual visual={afterHours.data.visual} /></div>
       <div class="after-hours-copy">
         <p class="eyebrow">After Hours</p>
         <h2><a href={articleHref(afterHours)}>{afterHours.data.title}</a></h2>

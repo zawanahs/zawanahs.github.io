@@ -1,7 +1,6 @@
 ---
 import type { Article } from '../lib/content';
 import { articleHref, categoryLabels, formatDate, seriesLabel } from '../lib/content';
-import CoverVisual from './CoverVisual.astro';
 
 interface Props {
   articles: Article[];
@@ -20,13 +19,6 @@ const { articles } = Astro.props;
     {articles.map((article, index) => (
       <article class="agent-article-card">
         <span class="agent-article-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
-        <a class="agent-article-thumbnail" href={articleHref(article)} aria-label={`Read ${article.data.title}`}>
-          {article.data.cover ? (
-            <img src={article.data.cover.src} alt={article.data.coverAlt ?? ''} loading="lazy" />
-          ) : (
-            <CoverVisual visual={article.data.visual} compact />
-          )}
-        </a>
         <div class="agent-article-title">
           <span>{seriesLabel(article.data.series) ?? categoryLabels[article.data.category]}</span>
           <h3><a href={articleHref(article)}>{article.data.title}</a></h3>
