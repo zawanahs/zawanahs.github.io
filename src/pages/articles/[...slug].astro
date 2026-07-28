@@ -2,7 +2,6 @@
 import type { GetStaticPaths } from 'astro';
 import { render } from 'astro:content';
 import ArticleCard from '../../components/ArticleCard.astro';
-import CoverVisual from '../../components/CoverVisual.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { articleSlug, categoryLabels, formatDate, getPublishedArticles, seriesLabel, tagHref } from '../../lib/content';
 
@@ -28,9 +27,6 @@ const label = seriesLabel(article.data.series) ?? categoryLabels[article.data.ca
       <p class="article-deck">{article.data.description}</p>
       <div class="article-byline"><span class="avatar" aria-hidden="true">Z</span><span><strong>Zawanah</strong><time datetime={article.data.published.toISOString()}>{formatDate(article.data.published)}</time></span></div>
     </header>
-    <div class="article-hero">
-      {article.data.cover ? <img src={article.data.cover.src} alt={article.data.coverAlt ?? ''} /> : <CoverVisual visual={article.data.visual} />}
-    </div>
     <div class="article-body" data-article={articleSlug(article)}><Content /></div>
     <footer class="article-footer">
       <p>Filed under <a href={`/${article.data.category}/`}>{categoryLabels[article.data.category]}</a>{article.data.series && <> · <a href={`/series/${article.data.series}/`}>{seriesLabel(article.data.series)}</a></>}.</p>
