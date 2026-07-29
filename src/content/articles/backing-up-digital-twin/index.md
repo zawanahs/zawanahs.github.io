@@ -20,7 +20,7 @@ In this guide, I walk through creating a private repo, generating a fine-grained
 
 ## What to back up
 
-I would definitely want to backup what differentiates my existing personalised agent from a generic agent, excluding my secrets, API keys, sensitive files. 
+I plan to backup what differentiates my existing personalised agent from a generic agent, excluding my secrets, API keys, sensitive files. 
 
 Putting it in an equation, generally : `(my personalised agent) - (generic agent) - (secrets, API keys, sensitive files)`
 
@@ -36,7 +36,7 @@ Keep in mind **never** to commit any of these to the backup repo:
 - API keys and access tokens
 - OAuth and authentication files
 
-While a private repo is only accessible to you, it should not be treated as a password vault.
+While a private repo is only accessible to the owner of the repo, it should not be treated as a password vault.
 
 ## 1. Create a private GitHub repository
 
