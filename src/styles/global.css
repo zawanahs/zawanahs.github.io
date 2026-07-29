@@ -212,7 +212,7 @@ main:has(> .after-hours-feature:last-child) + .site-footer { margin-top: 0; }
 .article-body h2, .article-body h3 { margin-top: 2.4em; line-height: 1.1; }
 .article-body h2 { font-size: 2.2rem; }.article-body h3 { font-size: 1.6rem; }
 .article-body a { color: var(--mint); }
-.article-body blockquote { margin: 2rem 0; padding-left: 1.4rem; border-left: 3px solid var(--mint); color: var(--soft); font-style: normal; font-weight: 700; }
+.article-body blockquote { margin: 2rem 0; padding-left: 1.4rem; border-left: 3px solid var(--mint); color: var(--soft); font-family: var(--serif); font-style: normal; font-weight: 500; }
 .article-body mark { padding: .05em .16em .1em; background: var(--highlight); color: inherit; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
 .article-body :not(pre) > code { padding: .08em .36em .12em; border: 1px solid color-mix(in srgb, var(--mint) 28%, var(--line)); border-radius: .32rem; background: color-mix(in srgb, var(--mint) 11%, transparent); color: var(--ink); font-family: ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', monospace; font-size: .78em; font-style: normal; font-weight: 500; letter-spacing: -.015em; white-space: nowrap; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
 .article-body pre { overflow: auto; padding: 1rem; border: 1px solid var(--line); background: var(--panel); font-size: .9rem; }
