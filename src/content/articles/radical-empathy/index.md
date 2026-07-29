@@ -10,7 +10,9 @@ cover: ./cover-cut-paper.png
 coverAlt: "Layered paper handshake between a green-sleeved human hand and a striped R’ongovian hand."
 ---
 
-This episode from *Star Trek: Strange New Worlds* was memorable. In this episode, Captain Pike is tasked with persuading the R'ongovians to ally with the Federation, but every diplomatic approach seems to fail. Mid-way, I was certain that there was *no way* he could win them over. But he eventually did, using an unconventional method: radical empathy and telling them that they shouldn't ally with the Federation. 
+This episode from *Star Trek: Strange New Worlds* was memorable for me so I had to document it. 
+
+Here's a quick overview: Captain Pike was tasked with persuading the R'ongovians to ally with the Federation, but every diplomatic approach seemed to fail. If I were him, it was discouraging to say the least. Mid-way, I was certain that there was *no way* he could win them over. But.. he eventually did, and he did it using an unconventional method: **radical empathy**and concluding that they actually, they probably shouldn't ally with the Federation. 😳
 
 ## Strategic Territory 
 
