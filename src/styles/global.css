@@ -16,8 +16,8 @@
   --page: min(1240px, calc(100% - 40px));
   --serif: 'Newsreader', Georgia, serif;
   --sans: 'DM Sans', system-ui, sans-serif;
-  --homepage-display-size: clamp(3.8rem, 6vw, 6.6rem);
-  --homepage-story-size: clamp(2rem, 3vw, 3.25rem);
+  --homepage-display-size: 5rem;
+  --homepage-story-size: clamp(1.75rem, 2.5vw, 2.65rem);
 }
 
 :root[data-theme='dark'] {
@@ -285,7 +285,7 @@ a.social-icon-link:hover { border-color: var(--mint-bright); background: var(--m
   .agent-panel { grid-template-columns: 1fr; }
   .agent-map { display: none; }
   .agent-panel article { min-height: 440px; padding: 1.3rem; }
-  :root { --homepage-display-size: clamp(3.6rem, 16vw, 5.6rem); }
+  :root { --homepage-display-size: 3.8rem; }
   .agent-desk-heading h2 { white-space: normal; }
   .agent-article-card { grid-template-columns: 2.5rem minmax(0, 1fr); grid-template-rows: auto; gap: 1rem; }
   .agent-article-number { grid-column: 1; grid-row: 1; align-self: start; padding-top: 1.2rem; }
