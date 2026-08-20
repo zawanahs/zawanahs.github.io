@@ -1,34 +1,12 @@
 ---
-title: "Analytics for Growing Tech Community, Women Devs SG"
+title: "Analytics for a Growing Tech Community, Women Devs SG"
 description: "Building a dashboard to help a technical community understand its members, improve its events, and plan more intentional outreach."
 published: 2026-08-19
 category: builds
 series: dashboard
-tags: [analytics, fable, dashboard]
+tags: [analytics, requirements, dashboard]
 draft: True
 ---
-
-## context
-While chatting with a fellow volunteer of Women Devs SG, I was interested to work on building an analytics dashboard for the WDS community. 
-
-
-
-“I’d like to work on this!” I commented. Soon after, the issue was assigned to me.
-
-It was a simple exchange, but it marked the beginning of a project that brought together two things I cared about: using my experience as an analyst and contributing to a community that supports women in their technical careers.
-
-As a volunteer with Women Devs SG, I saw an opportunity to build more than a collection of charts. The dashboard could help the directors better understand who attends our events, identify the topics and formats that resonate with the community, and plan more intentional outreach. For me, the project also became an exploration of how analytics can support a growing technical community—from asking the right questions to turning its data into decisions.
-
-
-
-![wds-issue](image.png)
-
-issue 
-requirements
-
-streamlining requirements into dashboard mock -> show my mockups
-
-presenting to director, and all is okay. 
 
 ### planning data pipeline. 
 considerations: 
@@ -57,5 +35,3 @@ waste of my time, and my brain is dying at each administrative workarounds i did
 so i fabled it. 
 
 in half a day i got the dashboard up.
-
-

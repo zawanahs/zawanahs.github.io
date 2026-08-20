@@ -1,0 +1,40 @@
+{
+  "workbench.editorAssociations": {
+    "*.md": "default",
+    "*.markdown": "default",
+    "*.mdx": "default",
+    "*.mdc": "default",
+    "git:/**/*.md": "default",
+    "git:/**/*.markdown": "default",
+    "git:/**/*.mdx": "default",
+    "git:/**/*.mdc": "default",
+    "git:**/*.md": "default",
+    "git:**/*.markdown": "default",
+    "git:**/*.mdx": "default",
+    "git:**/*.mdc": "default",
+    "chat-editing-text-model:/**/*.md": "default",
+    "chat-editing-text-model:/**/*.markdown": "default",
+    "chat-editing-text-model:/**/*.mdx": "default",
+    "chat-editing-text-model:/**/*.mdc": "default",
+    "chat-editing-text-model:**/*.md": "default",
+    "chat-editing-text-model:**/*.markdown": "default",
+    "chat-editing-text-model:**/*.mdx": "default",
+    "chat-editing-text-model:**/*.mdc": "default",
+    "*.ipynb": "jupyter.notebook.ipynb"
+  },
+  "markdownEditorOptimized.useAsDefault": false,
+  "editor.pasteAs.enabled": true,
+  "markdown.editor.filePaste.enabled": "always",
+  "markdown.editor.filePaste.copyIntoWorkspace": true,
+  "markdown.copyFiles.destination": {
+    "**/*.md": "${documentDirName}/${fileName}",
+    "**/*.mdx": "${documentDirName}/${fileName}",
+    "**/*.markdown": "${documentDirName}/${fileName}",
+    "**/*.mdc": "${documentDirName}/${fileName}"
+  },
+  "markdown.copyFiles.overwriteBehavior": "nameIncrementally",
+  "pasteImage.path": "${currentFileDir}",
+  "pasteImage.basePath": "${currentFileDir}",
+  "pasteImage.forceUnixStyleSeparator": true,
+  "pasteImage.insertPattern": "${imageSyntaxPrefix}./${imageFileName}${imageSyntaxSuffix}"
+}
