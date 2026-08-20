@@ -1,7 +1,7 @@
 ---
 title: "Analytics for a Growing Tech Community, Women Devs SG (Part 1)"
 description: "Building a dashboard to help a technical community understand its members, improve its events, and plan more intentional outreach."
-published: 2026-08-19
+published: 2026-04-30
 category: builds
 series: dashboard
 tags: [analytics, requirements, dashboard]
@@ -41,7 +41,13 @@ Once I've confirmed understanding of the use case of the dashboards, I proceed t
 
 ## Dashboard Mock Ups
 
-I've used *Figma* for process workflows and love it for UI designs. I intended to use it to mock up the dashboard. However, I found it too clunky for this particular use case because I needed to easily render charts as part of visualising data on the dashboards, and Figma doesn't have chart plugins that are versatile enough. My other go-to is *Excalidraw* but it also doesn't support charts.  I didn't want to spend too much time finding the best tool for visualising, as I simply needed to "get my vision on paper", so I went with *Excel*. 
+I've used *Figma* for process workflows and love it for UI designs. I intended to use it to mock up the dashboard. 
+
+However, I found it clunky for this particular use case because I needed to easily render charts as part of visualising data on the dashboards, and Figma doesn't have chart plugins that are versatile enough. 
+
+My other go-to is *Excalidraw* but it also doesn't support charts.  
+
+I didn't want to spend too much time finding the best tool for visualising, as I simply needed to "get my vision on paper", so I went with *Excel*. 
 
 #### Programme Effectiveness
 
