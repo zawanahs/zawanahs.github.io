@@ -1,20 +1,20 @@
 ---
 title: "Analytics for a Growing Tech Community, Women Devs SG (Part 2)"
 description: "Building a dashboard to help a technical community understand its members, improve its events, and plan more intentional outreach."
-published: 2026-08-19
+published: 2026-08-18
 category: builds
 series: dashboard
 tags: [analytics, requirements, dashboard]
-draft: True
+draft: False
 ---
 
 This is a continuation of [Part 1](https://zawanah.com/articles/wds-analytics-dashboard-part-1/) where I share the process of building an analytics dashboard for Women Devs SG. 
 
-For this part of the series, I will share about building the data pipelines that will feed this dashboard. This means planning the data architecture for the dashboard. 
+For this part of the series, I will share about building the data pipelines that will feed this dashboard and challenges and limitations while building.
 
 ## Data Pipeline
 
-There are 2 key considerations when I was planning for this:
+There are 2 key considerations when I planning the data architecture and flow into the dashboard:
 
 **1. Data sources** - Where does the data live now? Is there a need for data migration to a central place that feeds into the dashboard? Will there be data cleansing or transformation needed and where is best to perform these? 
 
@@ -40,36 +40,26 @@ Now that the data is ready and the tool is decided on, off I go to build it.
 
 I was pretty confident of building the dashboard since I already have the vision (and mock ups) for how the end product should look like and how it is to be used, and tooling is just something new I could pick up on.
 
-Unfortunately, I had a really bad experience working around the limitations of Data Studio. 
+However, I found myself spending a significant portion of my time working around the limitations of Data Studio.
 
 Specifically in these areas:
-- Aggregation calculation. I had to use a fixed number (for average satisfaction rate) as there were limita
-- Chart options
-- Formatting
+- Aggregation rules in calculated fields. When applying a formula using `CASE WHEN`, an aggregated field cannot be mixed with non-aggregated fields. Every aggregate recalculates relative to its current context, so there is no way to compare the `average satisfaction rate` of an event, against the `median satisfaction rate` for the year. Wrapping an aggregate in its own separate field doesn't work either. The only way was to hardcode the `median satisfaction rate` for the year in the formula, and this is not ideal
+- Chart coloring by topic and format, and toggling between the two is not straightforward and the only way was to build separate charts for each
+- Formatting involves adjusting the size of the chart or card and also changing the font size so it fits in the card. A change in size for one chart, would ripple into massive changes on surrounding charts.
+- AI summary feature which would be perfect for summarising feedback for a particular topic or format or event was not available on the free-tier build.
 
+![data-studio-error](image-1.png "Figure 2: System error in Data Studio due to aggregated fields")
 
-Here's the moment I decided to I will probably not use this tool ever again.
-![data-studio-error](image-1.png)
+It took me a day and some to configure workarounds, until I realised that time should be spent on more important and value-added endeavours, than administrative workarounds. 
 
+So I made a decision to move away from Data Studio.
+ 
+And instead, I fable-d the dashboard. And it was a breeze!
 
-Any seasoned data or business analyst would know that there is no perfect data in this world. We simply extract as much useful insights as we can with the data that we have. 
+![relief](relief.gif)
 
+The experience made me come close to concluding that there is no future for old dashboarding tools if I could take just half a day to produce the dashboard with Claude Code, and to build it straight from my vision!
 
+![claude-magic](claude-claude-ai.gif)
 
-
-
-
-
-### Building the dashboard 
-
-back and forth with looker studio. 
-pros: very easy to source directly from google sheets
-cons: data calc limitations
-
-found myself spending more time configuring the dashboard to calculate the field that i want and configuring the dashboard visuals to how i wanted it. 
-
-waste of my time, and my brain is dying at each administrative workarounds i did. 
-
-so i fabled it. 
-
-in half a day i got the dashboard up.
+Final build details in Part 3.

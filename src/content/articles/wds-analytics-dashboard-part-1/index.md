@@ -81,7 +81,9 @@ After some discussions with the Directors, I learnt that while this is a good mo
 - the numbers are not required at a monthly cadence, but rather, when partnerships deck are needed and when doing a retro at year-end. 
 - the goal is sustainable growth so as long as the WDS community is growing, all is well
 
-I appreciated this conversation because it highlights some key differences of the priorities of a for-profit and a non-profit organisation. Coming from a corporate background, the decisions made would be the opposite. For example, in corporate, there will be an annual growth rate % target (even quarterly and monthly growth rate %) and this is a number we need to beat the following year, and we must think of innovative ways to do it. Having it at a more regular cadence helps us see if we are closer or further away from the target and be able to make the necessary changes or apply new strategies to get closer to the target and maybe beat it by year end. I have to admit this sounds pretty exhilirating but at the same time, I also acknowledge the anxiety-inducing parts as well. 
+I appreciated this conversation because it highlights some key differences of the priorities of a for-profit and a non-profit organisation. 
+
+Coming from a corporate background, the decisions made would be the opposite. For example, in corporate, there will be an annual growth rate % target (even quarterly and monthly growth rate %) and this is a number we need to beat the following year, and we must think of innovative ways to do it. Having it at a more regular cadence helps us see if we are closer or further away from the target and be able to make the necessary changes or apply new strategies to get closer to the target and maybe beat it by year end. Well it sounds pretty exhilirating but at the same time, can be anxiety-inducing as well. 
 
 Anyway, so instead of growth rate, what would be more interesting is looking at the `attendee profile` for the events organised to learn more about the kind of individuals that the events are attracting. For example, the gender-mix for specific event topics, the seniority of the attendees, and the sector (private, public or academia etc.) of the organisation that the attendee is an employee of. This could help to market the events to the subgroup of target audience better or a change in the kind of content in events to attract more of our target audience.
 
@@ -101,11 +103,14 @@ Other key metrics and information in the mock up that would be useful is looking
 
 ---
 
-Mockups are important artifacts for end-users (in this case the Directors of WDS) to have an idea of how the dashboard looks like for their use. Seeing as how some of my dashboards mock up require some heavy makeovers, I can't impress the importance of a conversation with the stakeholders enough! I've learnt more about the priorities of a non-profit, and appreciate the Directors' time and feedback, and this opportunity. 
+Mockups are important artifacts for end-users (in this case the Directors of WDS) to have an idea of how the dashboard looks like for their use. Seeing as how some of my dashboards mock up require some heavy makeovers, I can't impress the importance of a conversation with the stakeholders enough! 
+
+I've learnt more about the priorities of a non-profit, and appreciate the Directors' time and feedback, and this opportunity. 
 
 Before I end Part 1, the keen eye might recognise that I designed my dashboards to follow key design principles of building an effective dashboard. It follows the [inverted pyramid design](https://help.salesforce.com/s/articleView?id=analytics.bi_dashboard_visual_hierarchy.htm&type=5): the most important metrics first, supporting charts next, followed by detailed tables or information at the bottom.
 
 Next, I share about planning the data pipelines that feed into the dashboard in Part 2.
+
 
 
 
