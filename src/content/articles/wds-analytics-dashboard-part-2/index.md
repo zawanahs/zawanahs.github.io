@@ -22,37 +22,43 @@ The data lives in Google Drive, and each event has its own folder that contains 
 
 Since most of the data live in Google Sheets, I decided to create a Master Google Sheet containing all the data that I need, which will then be sanitised (to exclude personally identifiable information), before being fed into the dashboarding tool. 
 
-I had thought of a more future proof solution by having all future events have the registrations and attendance data in one sheet, but this would require a significant change in the existing processes and I prefer to minimise significant changes to existing processes until the dashboard has earned a more permanent place here. 
+I had thought of a more future proof solution by having all future events have the registrations and attendance data in one sheet, but this would require a significant change in the existing processes and I prefer to minimise significant changes to current processes until the dashboard has earned a more permanent place here. 
 
 To create the Master sheet, I worked with Claude and Codex to generate the codes in JavaScript to first identify all event folders, and subsequently scrape all feedback data into google sheets.
 
 ![apps-script](image.png "Figure 1: Apps script Feedback Collector")
 
-**2. Which dashboarding tool** - PowerBI? Tableau? Data Studio?
+**2. Which dashboarding tool** - PowerBI or Tableau or Data Studio...
 
 I am familiar with Power BI and Tableau, but since this dashboard is meant to be accessible to leads of WDS, they need to be able to access it easily and if I built the dashboard with my account, it would be stuck with me. Not to mention you need a PowerBI and Tableau licence to view it. 
 
-Based on my research, the supposed next best option was Data Studio (formerly known as Looker Studio). Since it is a Google product, it would be seamless to feed data from the Master Google Sheet to Data Studio. 
+So I researched, and the next best option was Data Studio (formerly known as Looker Studio). Since it is also a Google product, it would be seamless to feed data from the Master Google Sheet to Data Studio. 
+
+Now that the data is ready and the tool is decided on, off I go to build it.
 
 ## Challenges and Limitations
 
-Any seasoned data or business analyst would know that there is no perfect data in this world. We simply extract as much useful insights as we can with what we have. 
+I was pretty confident of building the dashboard since I already have the vision (and mock ups) for how the end product should look like and how it is to be used, and tooling is just something new I could pick up on.
+
+Unfortunately, I had a really bad experience working around the limitations of Data Studio. 
+
+Specifically in these areas:
+- Aggregation calculation. I had to use a fixed number (for average satisfaction rate) as there were limita
+- Chart options
+- Formatting
+
+
+Here's the moment I decided to I will probably not use this tool ever again.
+![data-studio-error](image-1.png)
+
+
+Any seasoned data or business analyst would know that there is no perfect data in this world. We simply extract as much useful insights as we can with the data that we have. 
 
 
 
-### planning data pipeline. 
-considerations: 
-- data sources, g sheet. considered api for meetup for registrations and attendees data but decided on using what is available first, also need to consider the frequency of use ofthe dashboard eg. if we are only revisiting the dashabord for decisions every 6 months, we don't ahve to use an api that gets live registration or attendee data as soon as available. 
-- tools; data studio, powerbi, tableau. since the data source is sporadic in google sheets. it's easier to have the dashboard on a tool with easy integration. based on research, looker studio, so decided to go with this. 
 
 
 
-### Streamlining the data across all event folders in WDS google folder. 
-- apps script; some kinks eg. feedback form with just the g sheet and not the google forms. 
-
-Minimise changing existing processes too much, so decided to use a script that extracts all the g forms data across all events and consolidate it into a master file. 
-
-Considering PII, have to place the sanitised data in a separate google sheet, that looker studio takes from. 
 
 ### Building the dashboard 
 
