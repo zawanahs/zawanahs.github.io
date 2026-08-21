@@ -43,7 +43,7 @@ Finally, configured procedures still produced varied outputs. Setting up a *Skil
 
 Thus, **review needs to stay in the workflow** regardless of how carefully a skill is built. While configuration reduces variation, it doesn't remove the need to check the output.
 
-> So, human review stays in all AI-integrated workflows (unless it is not related to a high-risk business decision). Human review should include methods to verify outputs or claims made by the LLM. When working with LLMs, it is important to know how to work with its context limits.
+> So, human review stays in all AI-integrated workflows (unless it pertains to low-risk decisions). Human review should include methods to verify outputs or claims made by the LLM. When working with LLMs, it is important to know how to work with its context limits.
 
 Now that we have a clear understanding of how Gen AI behaves and how to work with it, next is applying the framework for making 4 decisions that need to be made before working with LLMs.
 
@@ -83,12 +83,18 @@ Beyond simple text generation, there are 3 features in the capability layer that
    
 3. **Code execution** verifies computation and should be used when the result *must be correct*, and not probabilistic.
    
-4. **Memory** for continuity across sessions. 
+4. **Memory** retains work-relevant facts across sessions so there's no need to re-enter project context each time in every session
+
+what should be in instructions context and what should be in memory. 
+
+
+
 
 ## Model
 
 
 ## Context Management
+
 
 
 
