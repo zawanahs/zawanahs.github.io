@@ -133,6 +133,7 @@ It is important to match well to avoid over-engineering routine work and under-r
 | Opus | Moderate | High @ $5/$25 per-million-token | More advanced performance than Sonnet or Haiku. Meant for tasks that require nuanced judgment, complex multi-step reasoning, ambiguous inputs that require interpretation, any work where quality outranks speed. Eg. client-facing deliverables, complex document analysis, strategic planning, and high-stakes synthesis across multiple sources. |
 | Sonnet | Moderate | Mid @ $2-3/$10-15 per-million-token | Balanced tier. Handles a range of professional tasks with strong quality across task types: drafting, synthesis, analysis, research assistance, and document review. For most of us, Sonnet is the **right starting point**. Switch up to Opus if quality falls short. If speed and volume is needed, then switch down to Haiku. |
 | Haiku | Fast | Low @ $1/$5 per-million-token | Structured tasks: classification, extraction, formatting, straightforward summarisation, high-volume routine work. Eg. Task that runs at volume across hundreds of items in sequence. |
+
 Start with Sonnet, assess if the task could work with Haiku, and if not, stick to Sonnet. Then escalate to stronger models when the current model falls short.
 
 After selecting the workflow's brain, we need to consider how long it can do the task well, by managing its context.
