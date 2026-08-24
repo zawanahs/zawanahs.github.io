@@ -4,11 +4,11 @@ description: "A first-principles approach to redesigning workflows with AI"
 published: 2026-08-19
 category: notes
 series: ai-integration-playbook
-tags: [ai-workflows, prompt]
-draft: True
+tags: [context-management, capability-layer, model]
+draft: False
 ---
 
-There are a lot of information out there about using AI in existing business processes and workflows but more often than not, the use cases are almost too simplistic, and not scalable at an enterprise level.
+There are a lot of information out there about using AI in existing business processes and workflows but more often than not, I find the use cases almost too simplistic, and not scalable at an enterprise level.
 
 In this series, I strive to extract key principles of integrating AI into existing business processes into a playbook to serve as a guide or roadmap when an organisation is planning on implementating AI into existing workflows. My starting point is Anthropic's foundational modules. 
 
@@ -75,25 +75,88 @@ Once the most suitable entry point is selected, we look at the capability layer,
 
 ## Capability Layer
 
-Beyond simple text generation, there are 3 features in the capability layer that support enterprise-level work:
+Beyond simple text generation, there are 4 features in the capability layer that support enterprise-level work:
 
 1. **Project Context** provides *background knowledge* and context for the specific workstream.
    
 2. **Skills** define *procedures or how a specific task should be executed consistently* each time. 
-   
+
+> Skills = reusable procedures. There are built-in skills for tasks: creating, editing, analyzing Excel spreadsheets, Word documents, ppt decks, and PDFs, but custom skills can be added using settings for task-specific workflows.
+>
+> Skills live at the account level (not inside any one Project) and they are invoked automatically when relevant in any conversation.
+>
+> Note:
+> - Skills reduce variance but they do not eliminate it no matter how well the Skill is configured. So, human review remains in the workflow.
+> - Skills require a trust evaluation. It has access to what Claude has access to during the session. Thus, before enabling a third party skill, review the source and permissions. Anthropic-provided skills and organization-approved skills are the low-risk starting point.
+ 
 3. **Code execution** verifies computation and should be used when the result *must be correct*, and not probabilistic.
+
+> This is Claude's sandboxed computation environment where it writes and runs code internally, then returns the result.
+>
+> This matters because Claude generates prose by producing the more probably next sequence of text, so for computation, it would then produce plausible-looking numbers that may or may not be accurate. Thus, with Code Execution, it would provide a verified result by actually running the calculation.
+>
+> Use this for numeric output that will be used or reported (eg. calculations, projections, summaries of figures), data that needs to be transformed or cleaned (eg. date normalization, deduplication, field formatting), when output needs a chart or visualisation, or if output needs a downloadable file (ie. .xlsx, .pptx, .docx, .pdf)
    
 4. **Memory** retains work-relevant facts across sessions so there's no need to re-enter project context each time in every session
 
-what should be in instructions context and what should be in memory. 
+> Memory is most useful when **actively curated**. Memory that's accurate last Q but hasn't been reviewed can be misleading. Maintain it by:
+> - monthly reviewing stored memories
+> - deleting or updating entries that no longer hold
+> - keeping the stored set focused on information that genuinely recurs across sessions
+>
+> Scoping Memory:
+> - by Project so memory contexts are separate for Client A vs Client B.
+> - use Incognito mode to keep a session out of Memory and chat history. For example, for sensitive conversations or exploratory work with confidential inputs that shouldn't surface in history or Memory.
+> - import Memory from other AI platforms or add key facts to Memory manually through memory settings, not add them into a Project's knowledge base.
 
+Each of the layers are independent and should be used in combination based on the requirements of the task. For example, a one-off question would not need any of them, whereas a recurring analytical workflow may use all 4 of them.
 
+#### Considerations for Capability Layer(s) required before rebuilding workflows
 
+1. What parts of this task recur (or are repetitive)? -> Standing instructions & Skill
+2. What material needs to be referenced across sessions? -> Knowledge base
+3. Are there outputs that need to be computed correctly? -> Code Execution
+4. What context needs to carry across sessions? -> Memory
+
+Note: Standing instructions define how Claude behaves while the knowledge base define what Claude knows.
+
+Now that the entry point is decided and capability layers are considered, next is deciding the brain of the workflow. Specifically, how well Claude does the task in question, and at what cost in speed. 
 
 ## Model
 
+Different model tiers for the Claude family range from efficient-and-fast to thorough-and-capable. 
+
+It is important to match well to avoid over-engineering routine work and under-resourcing high-stakes work.
+| Model | Speed | Cost | When best to use |
+| --- | --- | --- | --- |
+| Fable 5 | Slow | Very High $10/$50 per-million-token | For the hardest, highest-stakes work: Long-horizon multi-step or multi-day autonomous tasks, ambiguous problems where choosing the wrong approach is expensive to revert, and work where getting it right matters more than turnaround time or per-token cost. Fable should not be the starting point but escalate from Opus when Opus falls short. Eg. large multi-system migrations, deep multi-source research synthesis, high-stakes strategic work |
+| Opus | Moderate | High @ $5/$25 per-million-token | More advanced performance than Sonnet or Haiku. Meant for tasks that require nuanced judgment, complex multi-step reasoning, ambiguous inputs that require interpretation, any work where quality outranks speed. Eg. client-facing deliverables, complex document analysis, strategic planning, and high-stakes synthesis across multiple sources. |
+| Sonnet | Moderate | Mid @ $2-3/$10-15 per-million-token | Balanced tier. Handles a range of professional tasks with strong quality across task types: drafting, synthesis, analysis, research assistance, and document review. For most of us, Sonnet is the **right starting point**. Switch up to Opus if quality falls short. If speed and volume is needed, then switch down to Haiku. |
+| Haiku | Fast | Low @ $1/$5 per-million-token | Structured tasks: classification, extraction, formatting, straightforward summarisation, high-volume routine work. Eg. Task that runs at volume across hundreds of items in sequence. |
+Start with Sonnet, assess if the task could work with Haiku, and if not, stick to Sonnet. Then escalate to stronger models when the current model falls short.
+
+After selecting the workflow's brain, we need to consider how long it can do the task well, by managing its context.
 
 ## Context Management
+
+Every conversation has a working-memory limit ie. the **context window**. When messages and uploaded documents accumulate, the context window will start filling up. As it reaches the limit, Claude will automatically summarise earlier messages to make room (Note: full history still remains available for reference). During the summarisation, some details can get lost. For example, when we give instructions to Claude in the first 10 mins, after a long session 90 mins later, it may forget those instructions said at the beginning of the conversation. 
+
+Recognising **when** the conversation needs an intervention:
+- Claude *stops following instructions* it followed correctly earlier in the session
+- Responses *address only the most recent exchange* but not referencing earlier decisions or context.
+- *Accuracy of replies drop* that are consistent with missing context earlier in the session.
+
+When context has degraded, here are 3 ways to respond and when best to use each:
+| Options | Action | Best use case |
+| --- | --- | --- |
+| Restart | Start a new conversation | When beginning a genuinely new task within the same workstream or when current session has drifted beyond recovery. Note that this loses the existing conversation thread but the Project's standing instructions and knowledge base still carry forward automatically. |
+| Summarise | Get Claude to summarise the current state: decisions made, work in progress, and open questions. Next, paste this summary at the start of the new conversation as context. | Preserves thread continuity without carrying a degraded context window into the next session. |
+| Persist | Saving information in the conversation that should be available across all future sessions to Memory or update the Project Knowledge base. | Saving it into Memory/Knowledge Base is more efficient than re-entering it repeatedly. |
+Extended sessions on higher-tier models can reach the usage limit before the work is complete. For intensive tasks, it is more efficient to plan ahead than work around an uninterrupted session: 
+- break large tasks into segments,
+- save interim progress to the knowledge bases, 
+- restart from summary than extending a single session indefinitely
+
 
 
 
