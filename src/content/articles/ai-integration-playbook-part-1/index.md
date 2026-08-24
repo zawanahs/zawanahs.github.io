@@ -152,6 +152,7 @@ When context has degraded, here are 3 ways to respond and when best to use each:
 | Restart | Start a new conversation | When beginning a genuinely new task within the same workstream or when current session has drifted beyond recovery. Note that this loses the existing conversation thread but the Project's standing instructions and knowledge base still carry forward automatically. |
 | Summarise | Get Claude to summarise the current state: decisions made, work in progress, and open questions. Next, paste this summary at the start of the new conversation as context. | Preserves thread continuity without carrying a degraded context window into the next session. |
 | Persist | Saving information in the conversation that should be available across all future sessions to Memory or update the Project Knowledge base. | Saving it into Memory/Knowledge Base is more efficient than re-entering it repeatedly. |
+
 Extended sessions on higher-tier models can reach the usage limit before the work is complete. For intensive tasks, it is more efficient to plan ahead than work around an uninterrupted session: 
 - break large tasks into segments,
 - save interim progress to the knowledge bases, 
