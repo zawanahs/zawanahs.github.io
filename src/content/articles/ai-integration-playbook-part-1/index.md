@@ -21,7 +21,7 @@ The first behavioural property of Gen AI to understand is responses vary. There 
 
 As this is inherent in the tool itself, we need to **plan for variation in any workflow that depends on consistent outputs**, and **build review into the process**. 
 
-2. Confident tone \(\ne \) accuracy
+2. Confident tone ≠ accuracy
 
 Secondly, a confident tone does not signal accuracy. No matter how accurate the output is, the LLM can write with consistent fluency that sounds correct. In other words, a fabricated statistic can read as assuring as a verified statistic.
 
