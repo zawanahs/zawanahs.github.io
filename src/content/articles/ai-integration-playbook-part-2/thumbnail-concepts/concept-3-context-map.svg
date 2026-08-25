@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">AI Integration Playbook Part 2 thumbnail concept: context map</title>
+  <desc id="desc">A plain pale blue background with the title centered, a context map icon arranged around it, and Zawanah's face icon at the bottom right.</desc>
+  <defs>
+    <filter id="materialShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="8" stdDeviation="0" flood-color="#20313a" flood-opacity=".16"/>
+    </filter>
+    <style>
+      @font-face {
+        font-family: "Zawanah Hand";
+        src: url("../../../../../public/fonts/zawanah-hand.ttf") format("truetype");
+      }
+      .thin { stroke: #20313a; stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+      .hand { font-family: "Zawanah Hand", "Segoe Print", "Bradley Hand ITC", cursive; fill: #20313a; font-weight: 400; letter-spacing: 0; text-anchor: middle; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="675" fill="#dcebf0"/>
+
+  <g>
+    <path class="thin" d="M171 121 C238 142 296 168 344 201 M1015 125 C954 150 898 179 854 211 M184 540 C246 512 300 482 345 442 M840 532 C787 499 741 470 704 440" opacity=".35"/>
+    <g filter="url(#materialShadow)">
+      <circle cx="126" cy="111" r="44" fill="#fbbc04"/>
+      <circle cx="1061" cy="115" r="44" fill="#f7f2e8"/>
+      <circle cx="138" cy="552" r="44" fill="#f7f2e8"/>
+      <circle cx="874" cy="559" r="44" fill="#34a853"/>
+      <path d="M82 111 A44 44 0 0 1 126 67 V111z" fill="#ffd666" opacity=".85"/>
+      <path d="M1017 115 A44 44 0 0 1 1061 71 V115z" fill="#ffffff" opacity=".75"/>
+      <path d="M94 552 A44 44 0 0 1 138 508 V552z" fill="#ffffff" opacity=".75"/>
+      <path d="M830 559 A44 44 0 0 1 874 515 V559z" fill="#69c08b" opacity=".75"/>
+      <circle cx="1008" cy="236" r="34" fill="#4285f4"/>
+      <path d="M994 234 C1001 220 1016 220 1023 234 C1028 246 1019 256 1008 260 C997 256 989 246 994 234" fill="#fff8e8"/>
+      <path d="M1005 214 L1005 226 M1017 216 L1012 226" stroke="#fff8e8" stroke-width="4" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <text class="hand" x="600" y="305" font-size="78">AI Integration</text>
+  <text class="hand" x="600" y="392" font-size="78">Playbook Part 2</text>
+
+  <image href="../../../../../public/images/zawanah-face-material.png" x="900" y="392" width="248" height="248"/>
+</svg>

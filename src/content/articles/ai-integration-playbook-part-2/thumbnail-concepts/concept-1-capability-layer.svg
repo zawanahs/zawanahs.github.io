@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">AI Integration Playbook Part 2 thumbnail concept: capability layers</title>
+  <desc id="desc">A plain sage background with the title centered, a capability layer icon in the upper left, and Zawanah's face icon at the bottom right.</desc>
+  <defs>
+    <filter id="materialShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="9" stdDeviation="0" flood-color="#26312c" flood-opacity=".16"/>
+    </filter>
+    <filter id="softShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="5" stdDeviation="0" flood-color="#26312c" flood-opacity=".12"/>
+    </filter>
+    <style>
+      @font-face {
+        font-family: "Zawanah Hand";
+        src: url("../../../../../public/fonts/zawanah-hand.ttf") format("truetype");
+      }
+      .thin { stroke: #26312c; stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+      .hand { font-family: "Zawanah Hand", "Segoe Print", "Bradley Hand ITC", cursive; fill: #26312c; font-weight: 400; letter-spacing: 0; text-anchor: middle; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="675" fill="#dfeee4"/>
+
+  <g transform="translate(182 147)" filter="url(#materialShadow)">
+    <path d="M-88 60 L0 94 L88 60 L0 25 Z" fill="#43a047"/>
+    <path d="M-88 20 L0 54 L88 20 L0 -15 Z" fill="#fbbc04"/>
+    <path d="M-88 -20 L0 14 L88 -20 L0 -55 Z" fill="#4285f4"/>
+    <path d="M-88 -60 L0 -26 L88 -60 L0 -95 Z" fill="#ea4335"/>
+    <path d="M-88 -60 L0 -26 L0 -55 L-88 -88 Z" fill="#f06a5e" opacity=".55"/>
+    <path d="M-88 -20 L0 14 L0 -15 L-88 -48 Z" fill="#79aef7" opacity=".45"/>
+    <path d="M-88 20 L0 54 L0 25 L-88 -8 Z" fill="#ffd55f" opacity=".45"/>
+    <path d="M-88 60 L0 94 L0 65 L-88 32 Z" fill="#66bb6a" opacity=".45"/>
+  </g>
+
+  <g filter="url(#softShadow)">
+    <circle cx="922" cy="109" r="18" fill="#fbbc04"/>
+    <circle cx="995" cy="86" r="18" fill="#4285f4"/>
+    <circle cx="1065" cy="124" r="18" fill="#43a047"/>
+  </g>
+  <path class="thin" d="M940 107 C963 91 977 88 995 86 M1013 91 C1030 98 1046 108 1065 124" opacity=".35"/>
+
+  <text class="hand" x="600" y="305" font-size="78">AI Integration</text>
+  <text class="hand" x="600" y="392" font-size="78">Playbook Part 2</text>
+
+  <image href="../../../../../public/images/zawanah-face-material.png" x="900" y="392" width="248" height="248"/>
+</svg>

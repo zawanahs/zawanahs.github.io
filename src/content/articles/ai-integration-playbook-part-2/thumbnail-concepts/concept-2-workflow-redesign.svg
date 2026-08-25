@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">AI Integration Playbook Part 2 thumbnail concept: workflow redesign</title>
+  <desc id="desc">A plain warm background with the title centered, a workflow redesign icon on the left, and Zawanah's face icon at the bottom right.</desc>
+  <defs>
+    <filter id="materialShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="9" stdDeviation="0" flood-color="#302d27" flood-opacity=".16"/>
+    </filter>
+    <filter id="softShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="5" stdDeviation="0" flood-color="#302d27" flood-opacity=".12"/>
+    </filter>
+    <style>
+      @font-face {
+        font-family: "Zawanah Hand";
+        src: url("../../../../../public/fonts/zawanah-hand.ttf") format("truetype");
+      }
+      .thin { stroke: #302d27; stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+      .hand { font-family: "Zawanah Hand", "Segoe Print", "Bradley Hand ITC", cursive; fill: #302d27; font-weight: 400; letter-spacing: 0; text-anchor: middle; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="675" fill="#f1dfb7"/>
+
+  <g filter="url(#materialShadow)">
+    <rect x="72" y="98" width="88" height="58" rx="10" fill="#f7f2e8"/>
+    <rect x="72" y="188" width="88" height="58" rx="10" fill="#f7f2e8"/>
+    <rect x="72" y="278" width="88" height="58" rx="10" fill="#f7f2e8"/>
+    <path d="M143 98 h17 v58 h-17 z M143 188 h17 v58 h-17 z M143 278 h17 v58 h-17 z" fill="#e8e1d2"/>
+    <rect x="245" y="172" width="116" height="94" rx="16" fill="#4db6ac"/>
+    <path d="M245 172 h116 v26 H245z" fill="#80cbc4"/>
+    <path d="M276 205 l28 28 44 -51" fill="none" stroke="#fff8e8" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <path class="thin" d="M160 126 C204 126 219 178 245 214 M160 217 C200 217 218 217 245 214 M160 307 C205 307 222 247 245 214" opacity=".45"/>
+  <g filter="url(#softShadow)">
+    <path d="M953 110 C1009 81 1060 106 1087 158 C1110 202 1091 252 1047 276" fill="none" stroke="#757575" stroke-width="8" stroke-linecap="round"/>
+    <path d="M1047 276 l42 -11 -14 41 z" fill="#757575"/>
+  </g>
+
+  <text class="hand" x="600" y="305" font-size="78">AI Integration</text>
+  <text class="hand" x="600" y="392" font-size="78">Playbook Part 2</text>
+
+  <image href="../../../../../public/images/zawanah-face-material.png" x="900" y="392" width="248" height="248"/>
+</svg>
