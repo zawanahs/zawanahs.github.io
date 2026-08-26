@@ -12,7 +12,7 @@ This is Part 3 of the series where I distil the specifics of integrating LLMs in
 
 Part 1 of the series helps us decide the entry points, the capability layers to use, selecting the "brain" of the workflow, and how to manage context. Part 2 focuses on effective prompting strategies and iterating prompts diagnostically for more usable outputs. 
 
-Part 3 is about evaluating and validating Claude's output systematically.
+Part 3 is about evaluating and validating Claude's output systematically to be confident while being accountable for the final output.
 
 ## Evaluating Accuracy, Completeness, and Fitness
 
@@ -41,5 +41,46 @@ Once reviewed, sort the output into 3 different buckets and document the reasoni
 
 > An output can be entirely accurate and still omit a factor that impacts a decision
 
-Assess for whether the output is missing anything that could impact the decision that will be made off the output.
+Assess for whether the output is missing anything that could impact the decision(s) that will be made off the output.
+
+## Failure Patterns: Hallucinations, Inconsistencies & Bias
+
+In Part 1, we understand that LLMs can write with a confident tone even if it's a fabricated statistic. Learning to identify and spot specific failure patterns helps to prevent reliance on false information. 
+
+| Failure Patterns | Signals | Examples |
+| --- | --- | --- |
+| Hallucination | **Plausible but unsupported claims**: Statements that sound reasonable but with *no basis in the source or in fact*. **Fabricated specifics**: Invented statistics, dates, names, quotations, or citations. Being specific can read as authority. **Confident tone masking uncertainty**: A guess and well-ground fact can come across in the same assured tone. | Claude can claim to have taken an action it cannot actually take. Eg. "I've emailed that to your team". Note: *Treat any claimed external action as unverified until you confirm it happened*. "Approximately 63% of mid-market SaaS firms adopted at least 1 AI tool in 2025" may sound accurate, but needs cited sources. If no citations, means it's just a confident guess. "This clause is enforceable in this state." sounds assuring but legal enforceability is jurisdiction-specific and date-sensitive, so requires evidence of these. |
+| Inconsistencies and Bias | **Internal contradictions**: Especially in long outputs, a claim early on can conflict with the one later. Typically in long documents. **Confirmation bias in framing**: If the prompt *implicitly has a preferred answer, the output may lean toward it*. Look out for outputs that agree with you too readily on a question that should be open. | A 10-page market analysis needs a consistency pass, not just a paragraph-by-paragraph read. |
+
+The best way to prevent these is to employ verification techniques within the prompt first.
+
+## Fact-Checking and Grounding Techniques
+
+Use these as a checklist when prompting to generate outputs that are less likely to have hallucinations, inconsistencies or bias:
+
+1. **Prompt for Verifiability**
+  - Telling Claude explicitly that **admitting uncertainty is acceptable** -> A model under pressure to answer is more likely to fill the gap by inventing something.
+  - **Restrict to provided sources** -> Instruct Claude to answer only from the materials supplied and to flag anything that the materials do not cover. So instead of open-ended generation, it's bounded retrieval (like RAG).
+  - Require **auditable citations** -> Ask for specific source and location for each claim made in a way that can be easily reviewed.
+
+2. Grounding Techniques
+  - Quote first, then analyse -> For long documents, ask Claude to **extract supporting quotes first, before drawing conclusions**. This grounds the analysis in pulled quotes making the reasoning and errors more visible.
+  - Best-of-N comparison -> **Re-run the same request, then compare**. For parts that agree, we can have more confidence in it and where they diverge, they require a more detailed review
+  - **Validating against authoritative sources** -> Check against a trusted external reference rather than a second Claude response.
+
+
+## Threshold for Human Review
+
+While Claude can produce decent drafts which are then iterated to build the final output, there are tasks where it is non-negotiable that a human needs to be in the loop before the final output. 
+
+Know the thresholds for human review in advance and build this into policy is better than only stepping in when something goes wrong. 
+
+| Threshold | Assessment |
+| --- | --- |
+| Stakes | **High-cost errors** need human review no matter how confident the output is. |
+| Reversibility | An **irreversible step** (eg. a client deiverable, a filed report) need human review. |
+| Audience | **External, executive, and regulatory audiences** increase the review requirements. |
+| Regulatory exposure | **Regulated content** carries obligations. |
+
+## Editing and Adapting Output for Audience
 
