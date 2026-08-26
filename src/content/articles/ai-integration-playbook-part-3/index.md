@@ -1,14 +1,14 @@
 ---
-title: "AI Integration Playbook (Part 3)"
-description: "A first-principles approach to redesigning workflows with AI"
+title: "Systematically Evaluating Claude's Output"
+description: "A review framework for spotting hallucinations, calibrating risk and deciding when human judgment must stay in the loop"
 published: 2026-08-24
 category: notes
 series: ai-integration-playbook
 tags: [prompt, decomposition, components]
-draft: True
+draft: False
 ---
 
-This is Part 3 of the series where I distil the specifics of integrating LLMs into existing workflows. 
+This is Part 3 of the AI Integration Playbook series where I distil the specifics of integrating AI into existing business processes. 
 
 Part 1 of the series helps us decide the entry points, the capability layers to use, selecting the "brain" of the workflow, and how to manage context. Part 2 focuses on effective prompting strategies and iterating prompts diagnostically for more usable outputs. 
 
@@ -81,6 +81,36 @@ Know the thresholds for human review in advance and build this into policy is be
 | Reversibility | An **irreversible step** (eg. a client deiverable, a filed report) need human review. |
 | Audience | **External, executive, and regulatory audiences** increase the review requirements. |
 | Regulatory exposure | **Regulated content** carries obligations. |
+Reviewing the drafts before the final deliverable includes ensuring that it meets the professional standards of the industry or domain, and consideration of the type of audience.
 
 ## Editing and Adapting Output for Audience
+
+Check for:
+- **Clarity** -> Claude can be thorough and the edits to be made are for precision with the audience in mind.
+- **Tone** -> Match the tone of the output to the relationship and occasion with respect to the audience.
+- **Formatting** -> Shape the output into how it should be read by the audience. For example:
+  - For Executives - Executive summary that leads with the decision and impact on key metrics.
+  - For a Working Team - Detailed report and methods
+  - For External Clients - Clean with controls over what is disclosed and how information is framed
+
+## Output Formats
+
+Format of the output depends on the purpose of the results:
+| Output Format | Purpose |
+| --- | --- |
+| Inline | For quick and contextual reponse in chat |
+| Artifacts | For separate editable block that is meant to be refined and reused. Typically when a deliverable is expected. |
+| Structured Formats | For data eg. tables and defined schemas that downstream tools can consume directly |
+
+#### Code execution vs Prose
+Code execution runs the calculation and returns a computed and checkable result vs prose generation can produce a plausible-looking figure. 
+
+Note: *The guarantee is that humans can read, verify and rerun the calculation but the code need not be necessarily correct*. So while code execution is deterministic, since Claude writes the code, the logic can contain a bug.
+
+
+#### Curate inputs to shape output
+
+If inputs are organised, outputs are more likely to be organised. 
+
+Have structured and well-labelled source material (so the role of each input is explicit), deduplicate sources (so Claude is not synthesising multiple copies of the same material), and prune any materials that are not relevant to the question (noise in the input translates to noise in the output).
 

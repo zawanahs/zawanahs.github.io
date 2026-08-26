@@ -1,6 +1,6 @@
 ---
-title: "AI Integration Playbook (Part 2)"
-description: "A first-principles approach to redesigning workflows with AI"
+title: "Prompting, Decomposition, and Creating Better First Drafts"
+description: "How to structure prompts, decompose complex tasks, and iterate outputs effectively"
 published: 2026-08-24
 category: notes
 series: ai-integration-playbook
@@ -8,7 +8,7 @@ tags: [prompt, decomposition, components]
 draft: False
 ---
 
-Part 1 of this series was about understanding the nature of Gen AI, then deciding on the entry points and the capability layers to use for task workflows, selecting the Claude model that best fit the task(s), and managing context while working with it.
+Part 1 of this series was about understanding the nature of Gen AI, deciding on the entry points and the capability layers to use for task workflows, selecting the Claude model that best fit the task(s), and managing context while working with it.
 
 Part 2 looks at the structure and strategies for prompting and executing tasks, and how to iterate diagnostically when the output falls short. 
 
@@ -76,7 +76,7 @@ The emphasis for each component depends on the nature of tasks on these 2 axes: 
 
 At this stage, each workstream would have effectively designed prompt(s) specific to the nature of the tasks.
 
-Next, I look at evaluating and valuating Claude's output in systematically in Part 3.
+Next, we look at evaluating and valuating Claude's output in systematically in Part 3.
 
 
 

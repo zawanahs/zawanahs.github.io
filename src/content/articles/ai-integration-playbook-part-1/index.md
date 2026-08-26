@@ -1,6 +1,6 @@
 ---
-title: "AI Integration Playbook (Part 1)"
-description: "A first-principles approach to redesigning workflows with AI"
+title: "Designing the right AI Setup for the Work"
+description: "A framework for choosing the right entry point, capability layer, model, and context strategy before redesigning work with AI"
 published: 2026-08-19
 category: notes
 series: ai-integration-playbook
@@ -8,9 +8,13 @@ tags: [context-management, capability-layer, model]
 draft: False
 ---
 
-There are a lot of information out there about using AI in existing business processes and workflows but more often than not, I find the use cases almost too simplistic, and not scalable at an enterprise level.
+Welcome to Part 1 of the AI Integration Playbook series! There are a lot of information out there about integrating AI into existing business processes and workflows but more often than not, I find the use cases shared are almost too simplistic, and not scalable at an enterprise level.
 
-In this series, I strive to extract key principles of integrating AI into existing business processes into a playbook to serve as a guide or roadmap when an organisation is planning on implementating AI into existing workflows. My starting point is Anthropic's foundational modules. 
+In this series, I strive to extract key principles of integrating AI into existing business processes to serve as a guide or roadmap when an organisation is planning on implementating AI into existing workflows. 
+
+My starting point is Anthropic's foundational modules. 
+
+In Part 1, we start with understand the nature of Generative AI, deciding on the entry points, using the right capability layers, selecting the best fit model based on the nature of the work, and finally, understand context constraints when working with LLMs.
 
 ## Behavioural Properties of Generative AI
 Before even starting to work with Gen AI, it is important to understand how it behaves and so that once we know this, we would be able to manage our expectations when working with it, and then, learn how best to utilise it for our day-to-day work. 
