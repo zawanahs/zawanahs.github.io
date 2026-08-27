@@ -8,5 +8,9 @@ tags: [prompt, decomposition, components]
 draft: True
 ---
 
-This part of the series is about building a repeatable process, run by a team, where Claude performs the specific steps. Making good choices to automate the right steps is key.
+This part of the series shares use cases for building a repeatable process, run by a team, where Claude performs the specific steps. Making good choices to automate the right steps is key.
+
+## Extracting Business Requirements
+
+
 
