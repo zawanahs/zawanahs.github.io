@@ -5,7 +5,7 @@ published: 2026-08-26
 category: notes
 series: ai-integration-playbook
 tags: [prompt, decomposition, components]
-draft: True
+draft: FalseS
 ---
 
 This part of the series is about configuration and knowledge management. 
